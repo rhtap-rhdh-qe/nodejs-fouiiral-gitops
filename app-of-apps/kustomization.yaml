@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  tssc/gitops: nodejs-fouiiral 
+  janus-idp.io/tekton: nodejs-fouiiral
+  backstage.io/kubernetes-id: nodejs-fouiiral
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: nodejs-fouiiral
+resources:
+  - ci-tekton.yaml
+  - application-dev.yaml
+  - application-stage.yaml
+  - application-prod.yaml

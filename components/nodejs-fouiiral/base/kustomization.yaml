@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: nodejs-fouiiral
+  janus-idp.io/tekton: nodejs-fouiiral
+  backstage.io/kubernetes-id: nodejs-fouiiral
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: nodejs-fouiiral
+resources:
+  - deployment.yaml
+  - route.yaml
+  - service.yaml
